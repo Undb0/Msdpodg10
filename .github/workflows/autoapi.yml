@@ -24,7 +24,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        persist-credentials: true # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
     - name: Set up Python #Install python
       uses: actions/setup-python@v4
@@ -61,7 +61,7 @@ jobs:
     - name: Commit #Upload a new refresh_token to the repository
       run: |
         git config --global user.email 0a5p7hj8@dreamlake07.anonaddy.me
-        git config --global user.name MSAutoSubscribeService
+        git config --global user.name Undb0
         git add .
         git commit -m "Update new refresh token with Msdpodg10" -a
     - name: Push changes
